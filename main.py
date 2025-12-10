@@ -2,6 +2,7 @@
 from fastapi import FastAPI
 from datetime import datetime
 import requests
+import aiohttp
 from fastapi.middleware.cors import CORSMiddleware
 
 
