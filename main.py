@@ -76,4 +76,14 @@ async def fetch_weather_today():
     }
     return weather
 
-
+@app.get("/formulate")
+async def process_input_evaluation_step_1(RFQ_ID: str,Supllier_Name:str,Supplier_ID:str,Supplier_Contack:str,Quote_status:str):
+    """formulate the input to the standard format for evaluation agent"""
+    input_data = {
+        "RFQ_ID": RFQ_ID,
+        "Supllier_Name": Supllier_Name,
+        "Supplier_ID": Supplier_ID,
+        "Supplier_Contack": Supplier_Contack,
+        "Quote_status": Quote_status
+    }
+    return input_data
