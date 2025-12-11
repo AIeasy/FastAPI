@@ -83,7 +83,7 @@ async def process_input_evaluation_step_1(RFQ_ID: str,Quantity:str,Supllier_Name
         "RFQ_ID": RFQ_ID,
         "Supllier_Name": Supllier_Name,
         "Supplier_ID": Supplier_ID,
-        "Supplier_Contack": Supplier_Contact,
+        "Supplier_Contact": Supplier_Contact,
         "Quote_status": Quote_status,
         "Proposed_delivery_days": Proposed_delivery_days,
         "Price_per_unit": Price_per_unit,
