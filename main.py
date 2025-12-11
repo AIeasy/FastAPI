@@ -77,13 +77,35 @@ async def fetch_weather_today():
     return weather
 
 @app.get("/formulate")
-async def process_input_evaluation_step_1(RFQ_ID: str,Supllier_Name:str,Supplier_ID:str,Supplier_Contact:str,Quote_status:str):
+async def process_input_evaluation_step_1(RFQ_ID: str,Quantity:str,Supllier_Name:str,Supplier_ID:str,Supplier_Contact:str,Price_per_unit:str,Currency:str,Quote_status:str,Proposed_delivery_days:str):
     """formulate the input to the standard format for evaluation agent"""
     input_data = {
         "RFQ_ID": RFQ_ID,
         "Supllier_Name": Supllier_Name,
         "Supplier_ID": Supplier_ID,
         "Supplier_Contack": Supplier_Contact,
-        "Quote_status": Quote_status
+        "Quote_status": Quote_status,
+        "Proposed_delivery_days": Proposed_delivery_days,
+        "Price_per_unit": Price_per_unit,
+        "Currency": Currency,
+        "Quantity": Quantity,
+    }
+    return input_data
+@app.get("/formulate_step_2")
+async def process_input_evaluation_step_2(Supplier_Name:str,Supplier_ID:str,Price_per_unit:str,Total_queued_amount:str,Currency:str,ESG:str,Reliability:str,Evaluation_score:str,Awarded_status:str,Strengths:str,Weaknesses:str,Rationale:str):
+    """formulate the input to the standard format for evaluation agent"""
+    input_data = {
+        "Supplier_Name": Supplier_Name,
+        "Supplier_ID": Supplier_ID,
+        "Price_per_unit": Price_per_unit,
+        "Total_queued_amount": Total_queued_amount,
+        "Currency": Currency,
+        "ESG": ESG,
+        "Reliability": Reliability,
+        "Evaluation_score": Evaluation_score,
+        "Awarded_status": Awarded_status,
+        "Strengths": Strengths,
+        "Weaknesses": Weaknesses,
+        "Rationale": Rationale
     }
     return input_data
